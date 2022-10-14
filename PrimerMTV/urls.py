@@ -15,9 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from appMTV.views import index
+from appMTV.views import index,  monstrar_familiares
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('saludar/', index), 
+    path('saludar/', index),
+    path('mi-familia/', monstrar_familiares), 
 ]
