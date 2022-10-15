@@ -16,9 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from appMTV.views import index,  monstrar_familiares
-
+from blog.views import index as blog_index
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('saludar/', index),
     path('mi-familia/', monstrar_familiares), 
+    path('blog/', blog_index),
 ]
