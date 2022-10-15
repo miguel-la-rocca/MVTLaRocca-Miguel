@@ -8,3 +8,4 @@ def index(request):
 def monstrar_familiares(request):
   lista_familiares = Familiar.objects.all()
   return render(request, "appMTV/familiares.html", {"lista_familiares": lista_familiares})
+

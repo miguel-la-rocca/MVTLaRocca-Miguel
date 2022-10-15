@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'appMTV.apps.AppmtvConfig',
+    'blog.apps.BlogConfig',
 ]
 
 MIDDLEWARE = [
