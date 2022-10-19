@@ -1,6 +1,13 @@
 {% extends 'appMTV/base.html' %}
-{% block titulo%} Lista de todos mis Familiares {% endblock %}
+{% block titulo%} Buscar Familiares por nombre {% endblock %}
 {% block contenido %}
+  
+  <form action="/mi-familia/buscar" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit">
+  </form>
+
   {% for familiar in lista_familiares %}
       <ul>
           <li> Nombre: {{familiar.nombre}}, Dirección: {{familiar.direccion}}, Pasaporte: {{familiar.numero_pasaporte}}</li>
