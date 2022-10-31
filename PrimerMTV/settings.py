@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'appMTV.apps.AppmtvConfig',
     'blog.apps.BlogConfig',
+    'panel_familia.apps.PanelFamiliaConfig',
 ]
 
 MIDDLEWARE = [

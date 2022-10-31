@@ -14,11 +14,12 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include 
 from appMTV.views import (index,  monstrar_familiares, 
                         BuscarFamiliar, AltaFamiliar, ActualizarFamiliar, 
-                        FamiliarList, FamiliarCrear, FamiliarBorrar, FamiliarActualizar)
+                        )
 from blog.views import index as blog_index
+
 
 
 urlpatterns = [
@@ -30,8 +31,5 @@ urlpatterns = [
     path('mi-familia/alta', AltaFamiliar.as_view()),
      # EL paramatro pk hace referencia al identificador único en la base de datos para Familiar.
     path('mi-familia/actualizar/<int:pk>', ActualizarFamiliar.as_view()), # NUEVA RUTA PARA BUSCAR FAMILIAR
-    path('panel-familia/', FamiliarList.as_view()),
-    path('panel-familia/crear', FamiliarCrear.as_view()),
-    path('panel-familia/<int:pk>/borrar', FamiliarBorrar.as_view()),
-    path('panel-familia/<int:pk>/actualizar', FamiliarActualizar.as_view()),
+    path('panel-familia/', include('panel_familia.urls')),
 ]

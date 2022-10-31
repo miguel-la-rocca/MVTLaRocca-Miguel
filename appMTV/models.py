@@ -5,7 +5,5 @@ class Familiar(models.Model):
     direccion = models.CharField(max_length=200)
     numero_pasaporte = models.IntegerField()
 
-def __str__(self):
-    return f"{self.nombre}, {self.numero_pasaporte}, {self.id}"
-
-
+    def __str__(self):
+      return f"{self.nombre}, {self.numero_pasaporte}, {self.id}"
