@@ -1,0 +1,14 @@
+{% extends 'appMtv/base.html' %}
+{% block titulo%} Modificar un Familiar {% endblock %}
+{% block contenido %}
+
+<!-- Prestar aatención a la variable familiar.id -->
+<form action="/mi-familia/actualizar/{{ familiar.id }}" method="post"> 
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit">
+</form>
+
+<h2 style="color:green">{{msg_exito}}</h2>
+
+{% endblock %}

@@ -15,8 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from appMTV.views import index,  monstrar_familiares, BuscarFamiliar, AltaFamiliar
+from appMTV.views import (index,  monstrar_familiares, 
+                        BuscarFamiliar, AltaFamiliar, ActualizarFamiliar, 
+                        FamiliarList, FamiliarCrear, FamiliarBorrar, FamiliarActualizar)
 from blog.views import index as blog_index
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('saludar/', index),
@@ -24,4 +28,10 @@ urlpatterns = [
     path('blog/', blog_index),
     path('mi-familia/buscar', BuscarFamiliar.as_view()),
     path('mi-familia/alta', AltaFamiliar.as_view()),
+     # EL paramatro pk hace referencia al identificador único en la base de datos para Familiar.
+    path('mi-familia/actualizar/<int:pk>', ActualizarFamiliar.as_view()), # NUEVA RUTA PARA BUSCAR FAMILIAR
+    path('panel-familia/', FamiliarList.as_view()),
+    path('panel-familia/crear', FamiliarCrear.as_view()),
+    path('panel-familia/<int:pk>/borrar', FamiliarBorrar.as_view()),
+    path('panel-familia/<int:pk>/actualizar', FamiliarActualizar.as_view()),
 ]
