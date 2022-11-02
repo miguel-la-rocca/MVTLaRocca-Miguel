@@ -9,4 +9,6 @@ urlpatterns = [
     path('update/<int:pk>/', UpdatePost.as_view(), name="update-post"),
     path('delete/<int:pk>', DeletePost.as_view(), name="delete-post"),
     path('search-by-name/', SearchPostByName.as_view(), name="search-by-name-post"),
+    path('login/', BlogLogin.as_view(), name="blog-login"),
+    path('logout/', BlogLogout.as_view(), name="blog-logout"),
 ]

@@ -7,6 +7,9 @@
     <title>Document</title>
 </head>
 <body>
+
+    <a href="{% url 'blog-logout' %}">Salir</a>
+    
     <ul>
     {% for post in object_list %}
         <li>{{post}} 
@@ -16,7 +19,7 @@
     {% endfor %}
     </ul>
 
-    <a href="{% url 'create-post'%}">Crear un nuevo post</a>
+    <a href="{% url 'create-post' %}">Crear un nuevo post</a>
 
 </body>
 </html>
