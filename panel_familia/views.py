@@ -6,6 +6,7 @@ from appMTV.models import Familiar
 
 
 
+
 class FamiliarList(ListView):
   model = Familiar
 

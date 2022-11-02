@@ -18,7 +18,7 @@ from django.urls import path, include
 from appMTV.views import (index,  monstrar_familiares, 
                         BuscarFamiliar, AltaFamiliar, ActualizarFamiliar, 
                         )
-from blog.views import index as blog_index
+#from blog.views import index as blog_index
 
 
 
@@ -26,10 +26,11 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('saludar/', index),
     path('mi-familia/', monstrar_familiares), 
-    path('blog/', blog_index),
+  
     path('mi-familia/buscar', BuscarFamiliar.as_view()),
     path('mi-familia/alta', AltaFamiliar.as_view()),
      # EL paramatro pk hace referencia al identificador único en la base de datos para Familiar.
     path('mi-familia/actualizar/<int:pk>', ActualizarFamiliar.as_view()), # NUEVA RUTA PARA BUSCAR FAMILIAR
     path('panel-familia/', include('panel_familia.urls')),
+    path('blog/', include('blog.urls')),
 ]
