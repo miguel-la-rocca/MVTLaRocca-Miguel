@@ -9,6 +9,7 @@
 <body>
     ¿Está seguro de borrar el post {{post.title}}? 
     <form method="post">
+        {% csrf_token %}
         {{form}}
         <input type="submit" value="si">
     </form>
