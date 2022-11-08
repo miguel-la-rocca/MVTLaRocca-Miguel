@@ -1,14 +1,28 @@
+{% extends 'blog/base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    {{object}}
-    <img height="255" src="{{ object.image.url }}"/>
-</body>
-</html>
+
+{% block header %}
+    <div class="d-flex justify-content-center">
+        <h1>{{object.title}}</h1>
+    </div>
+    <div class="d-flex justify-content-center">
+        <h5> publicado: {{object.date_published}} </h5>
+    </div>
+{% endblock %}
+
+{% block contenido %}
+
+    <div class="d-flex justify-content-center">
+        {% if object.image %}
+        <img height="255" src="{{ object.image.url }}" />
+        {% else %}
+        <img height="255" src="https://dummyimage.com/255x255/dee2e6/6c757d.jpg" alt="...">
+        {% endif %}
+    </div>
+    <div class="container text-wrap py-1 my-1" style="word-break: break-all;">
+
+            {{object.content}}
+
+    </div>
+
+{% endblock %}
