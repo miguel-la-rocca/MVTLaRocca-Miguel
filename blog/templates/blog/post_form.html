@@ -1,2 +1,12 @@
 {% extends 'blog/base.html' %}
 {% block contenido %}
+<CENTER>
+    
+    <form  enctype='multipart/form-data' method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="Publish">
+    </form>
+</CENTER>
+    <a href="{% url 'list-post' %}">Volver a la lista de post</a>
+{% endblock %}

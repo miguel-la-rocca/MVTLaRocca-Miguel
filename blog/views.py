@@ -58,3 +58,6 @@ class ProfileUpdate(UpdateView):
     model = User
     fields = ['username', 'first_name', 'last_name', 'email']
     success_url = reverse_lazy("blog-login")
+
+def about(request):
+    return render(request, "blog/about.html")
