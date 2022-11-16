@@ -1,5 +1,5 @@
-## Proyecto final Coder House - Python Django
-Comision: 44065
+## Proyecto final Coder House - Python/Django 2022
+comision: 44065
 #Alumnos:
 
 Diego Tellechea
