@@ -43,3 +43,9 @@ PYTHON
 
 DJANGO
 
+## Back_end
+
+video explicativo del funcionamiento de la pagina:
+
+https://drive.google.com/file/d/13hiWw1nbgTqcu77L6Hn2GTZWlGX2sbLF/view?usp=sharing
+
